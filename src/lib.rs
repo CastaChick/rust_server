@@ -49,10 +49,14 @@ impl ThreadPool {
     /// # Panics
     /// 
     /// The `new` function will panic if the size is zero.
+    /// 
+    /// ## TODO
+    /// - Return `PoolCreatinError` when size is zero.
+    /// - More documents.
+    /// - Add Tests.
+    /// - Add Error handling.
+    /// - Try some external crate to generate thead pool.
     pub fn new(size: usize) -> ThreadPool {
-        //! ## TODO
-        //! 
-        //! Return `PoolCreatinError` when size is zero.
         assert!(size > 0);
         
         let (sender, receiver) = mpsc::channel();
